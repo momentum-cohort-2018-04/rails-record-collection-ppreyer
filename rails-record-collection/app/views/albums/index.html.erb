@@ -1,0 +1,41 @@
+<div id="main-container" class="container">
+      <div class="row">
+        <div id="navbar" class="col-md-12">
+          <h1>Album List</h1>
+          <%= link_to 'Create a New Album', new_album_path %>
+        </div>
+      </div>
+</div>
+
+<div class="row">
+
+  <div class="col-md-12 table-responsive">  
+    <table class="table table-sm table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Artist</th>
+          <th>Album Release Date</th>
+          <th>View Album</th>
+          <th>Edit Album</th>
+          <th>Delete Album</th>
+        </tr>
+      </thead>
+    <% @albums.each do |album| %>
+      <tbody>
+        <tr>
+          <td><%= album.title %></td>
+          <td><%= album.artist %></td>
+          <td><%= album.year_released %></td>
+          <td><%= link_to "Details", album_path(album) %></td>
+          <td><%= link_to "Edit", edit_album_path(album) %></td>
+          <td><%= link_to 'Destroy', album_path(album),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      </tbody
+      <% end %>
+    <table>
+  </div>
+</div>
+

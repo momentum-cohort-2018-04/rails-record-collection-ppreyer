@@ -1,0 +1,29 @@
+<div id="main-container" class="container">
+      <div class="row">
+        <div id="navbar" class="col-md-6">
+          <h1>Album Details</h1>
+          <p><%= link_to "Back", albums_path %><p>
+        </div>
+      </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 table-responsive">  
+    <table class="table table-sm table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Artist</th>
+          <th>Album Release Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @album["title"] %></td>
+          <td><%= @album["artist"] %></td>
+          <td><%= @album["year_released"] %></td>
+        </tr>
+      </tbody>
+    <table>
+  </div>
+</div>
